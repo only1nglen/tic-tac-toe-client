@@ -14,4 +14,5 @@ $(() => {
   // your JS code goes here
   gameEvents.addHandlers()
   gameLogic.addLogic()
+  authEvents.addHandlers()
 })

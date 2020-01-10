@@ -1,5 +1,5 @@
 'use strict'
-const store = require('./store')
+const store = require('./../store')
 
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')
@@ -14,8 +14,8 @@ const signInSuccess = function (response) {
   $('#sign-in').hide()
   $('#sign-out').show()
   $('#change-password').show()
+  $('#temp').show()
   store.user = response.user
-  console.log(store.user)
 }
 const signInFailure = function () {
   $('#message').text('Sign In Failed!')
@@ -34,6 +34,7 @@ const signOutSuccess = function (response) {
   $('#sign-in').show()
   $('#sign-out').hide()
   $('#change-password').hide()
+  $('#temp').hide()
 }
 const signOutFailure = function () {
   $('#message').text('Sign Out Failed!')
@@ -48,5 +49,4 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signInFailure
-
 }

@@ -3,7 +3,29 @@
 .box {
   background-color: white;
   border: 1px solid black;
-  color: black;
+  color: blue;
+  align-items: center;
   display: flex;
+  height: 100px;
+  justify-content: center;
+}
+
+.player {
+  background-color: white;
+  border: 1px solid black;
+  color: red;
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+}
+
+.message {
+  background-color: white;
+  border: 1px solid black;
+  color: green;
+  align-items: center;
+  display: flex;
+  height: 100px;
   justify-content: center;
 }

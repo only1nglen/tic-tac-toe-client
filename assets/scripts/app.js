@@ -11,6 +11,8 @@ $(() => {
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#temp').hide()
+  $('.board').hide()
+  $('#new-game').hide()
   // your JS code goes here
   gameEvents.addHandlers()
   gameLogic.addLogic()

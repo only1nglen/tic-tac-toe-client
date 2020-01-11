@@ -38,11 +38,9 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const clearFields = function(){
- $('#sign-up').on('click', val(" "))
- $('#sign-in').on('click', reset())
- $('#change-password').on('click', value(' '))
- $('#sign-out').on('click', value(' '))
+const showBoard = function () {
+  event.preventDefault()
+  $('.board').show()
 }
 
 const addHandlers = function () {
@@ -50,9 +48,9 @@ const addHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  // $('#new-game').on('click'), showBoard)
 }
 
 module.exports = {
-  addHandlers,
-  clearFields
+  addHandlers
 }

@@ -10,13 +10,13 @@ const changeTurn = function () {
   } else {
     currentPlayer = 'X'
     $('.player').text(`Player ${currentPlayer}'s Turn`)
-  }
+  } return currentPlayer
 }
 
 const pickAnother = function () {
-if ($('.box') === 'X' || 'O') {
+// if ($('.box') === 'X' || 'O') {
    $('.message').text('Please choose another move!')
- }
+ // }
 }
 
 const playMove = function (event) {
@@ -25,7 +25,10 @@ const playMove = function (event) {
   $('.message').text("You've made a move!")
   $(event.target).on('click', pickAnother)
   changeTurn()
+  gameThink.collectMove()
+  gameThink.checkWinner()
 }
+
 
 const addHandlers = function () {
   $('.box').one('click', playMove)

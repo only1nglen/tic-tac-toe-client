@@ -19,6 +19,7 @@ const signInSuccess = function (response) {
   $('#temp').show()
   $('#sign-in')[0].reset()
   $('#new-game').show()
+  $('.board').show()
   store.user = response.user
 }
 const signInFailure = function () {

@@ -1,7 +1,8 @@
 'use strict'
-const gameThink = require('./game-logic')
+const gameThink = require('./game-logic.js')
 
 let currentPlayer = 'X'
+let movesMade = 0
 
 const changeTurn = function () {
   if (currentPlayer === 'X') {
@@ -10,30 +11,28 @@ const changeTurn = function () {
   } else {
     currentPlayer = 'X'
     $('.player').text(`Player ${currentPlayer}'s Turn`)
-  } return currentPlayer
-}
-
-const pickAnother = function () {
-// if ($('.box') === 'X' || 'O') {
-   $('.message').text('Please choose another move!')
- // }
+  }
 }
 
 const playMove = function (event) {
   event.preventDefault()
+  if ($(event.target).text() === '') {
   $(event.target).text(currentPlayer)
-  $('.message').text("You've made a move!")
-  $(event.target).on('click', pickAnother)
-  changeTurn()
   gameThink.collectMove()
-  gameThink.checkWinner()
+  movesMade++
+  gameThink.checkWinner(movesMade)
+  changeTurn()
+} else {
+  $('.message').text('Please choose another move!')
+  }
 }
 
-
 const addHandlers = function () {
-  $('.box').one('click', playMove)
+  $('.box').on('click', playMove)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  movesMade,
+  currentPlayer
 }

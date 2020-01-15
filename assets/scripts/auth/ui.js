@@ -1,5 +1,5 @@
 'use strict'
-const store = require('./../store')
+const store = require('./../store.js')
 
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')

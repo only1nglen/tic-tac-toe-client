@@ -7,6 +7,7 @@ const checkWinner =  function (movesMade) {
   if (gameBoard[0] !== '' && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) {
     $('.message').text(`Player ${gameAction.currentPlayer} has won1!`)
     $('.box').off('click')
+    over = true
   } else if
     (gameBoard[3] !== '' && gameBoard[3] === gameBoard[4] && gameBoard[3] === gameBoard[5]) {
     $('.message').text(`Player ${gameAction.currentPlayer} has won2!`)
@@ -38,6 +39,7 @@ const checkWinner =  function (movesMade) {
   } else if (movesMade >= 9) {
   $('.message').text('Game is a Draw')
   $('.box').off('click')
+  clearBoard()
   } else {
     $('.message').text("You've made a move!")
   }
@@ -64,6 +66,10 @@ const collectMove = function () {
   gameBoard.splice( 8, 1, boxPicked8)
 }
 
+// const clearBoard = function() {
+//   document.getElementsByClassName('gameSpace').innerHTML.text(' ')
+// }
+
 const addLogic = function () {
 
 }
@@ -73,4 +79,5 @@ module.exports = {
   collectMove,
   checkWinner,
   gameBoard
+  // clearBoard
 }

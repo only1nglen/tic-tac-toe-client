@@ -13,6 +13,7 @@ $(() => {
   $('#temp').hide()
   $('.board').hide()
   $('#new-game').hide()
+  $('#show-game').hide()
   // your JS code goes here
   gameEvents.addHandlers()
   authEvents.addHandlers()

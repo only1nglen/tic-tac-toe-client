@@ -20,7 +20,9 @@ const signInSuccess = function (response) {
   $('#sign-in')[0].reset()
   $('#new-game').show()
   $('.board').show()
+  $('#show-game').show()
   store.user = response.user
+  // console.log(store.user)
 }
 const signInFailure = function () {
   $('#message').text('Sign In Failed!')
@@ -45,9 +47,42 @@ const signOutSuccess = function (response) {
   $('#temp').hide()
   $('.board').hide()
   $('#new-game').hide()
+  $('#show-game').hide()
 }
+
 const signOutFailure = function () {
   $('#message').text('Sign Out Failed!')
+}
+
+const showGameSuccess = function () {
+  $('#message').text('Your Games!')
+}
+
+const showGameFailure = function () {
+  $('#message').text('Cant find your Games!')
+}
+
+const createGameSuccess = function (response) {
+  $('#message').text('Start Your Game!')
+  // store.id = response.game.id
+  // store.game.id = response.game.id
+  // console.log(store.game.id, "is game ID")
+  store.game = response.game
+  // console.log(response, "game created")
+}
+
+const createGameFailure = function () {
+  $('#message').text('Could Not Create a New Game')
+}
+
+const onUpdateGameFailure = function () {
+  $('#message').text('didnt update game')
+}
+
+const onUpdateGameSuccess = function (response) {
+  $('#message').text('game is updated')
+  // store.game.id = response.game.id
+  // console.log(response, 'updated')
 }
 
 module.exports = {
@@ -58,5 +93,11 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signInFailure
+  signInFailure,
+  // showGameSuccess,
+  // showGameFailure,
+  createGameSuccess,
+  createGameFailure,
+  onUpdateGameFailure,
+  onUpdateGameSuccess
 }

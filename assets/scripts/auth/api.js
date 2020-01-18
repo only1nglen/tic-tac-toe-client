@@ -3,7 +3,6 @@
 const config = require('./../config')
 const store = require('./../store')
 
-
 const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -43,7 +42,7 @@ const signOut = function () {
 
 const showGame = function () {
   return $.ajax({
-    url: config.apiUrl + '/games' + store.game.id,
+    url: config.apiUrl + '/games?over=true' + store.game.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -64,7 +63,6 @@ const createGame = function () {
 }
 
 const updateGame = function () {
-  // console.log(store, "is open")
   return $.ajax({
     url: config.apiUrl + '/games/'+ store.game.id,
     method: 'PATCH',
@@ -74,16 +72,14 @@ const updateGame = function () {
     data: {
   "game": {
     "cell": {
-      "index": 0,
-      "value": "x"
+      "index": store.id,
+      "value": store.currentPlayer
     },
-    "over": false
+    "over": store.gameOver
   }
 }
 })
 }
-
-// console.log(game.cell.index)
 
 module.exports = {
  signUp,

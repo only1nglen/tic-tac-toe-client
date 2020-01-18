@@ -1,9 +1,11 @@
 'use strict'
 const store = require('./../store.js')
+const gameCan = require('./../game/game-logic.js')
+const gameAction = require('./../game/events.js')
 
 const signUpSuccess = function () {
   $('#message').text('Successfully signed up!')
-  $('#sign-up')[0].reset()
+  $('#sign-up')[0].reset('')
 }
 const signUpFailure = function () {
   $('#message').text('Sign up Failed!')
@@ -11,7 +13,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('Successfully signed In!')
+  $('#main-message').text('Successfully signed In!')
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-out').show()
@@ -21,8 +23,11 @@ const signInSuccess = function (response) {
   $('#new-game').show()
   $('.board').show()
   $('#show-game').show()
+  $('.board').hide()
+  // gameCan.clearBoard()
+  // $('.box').on('click', gameAction.playMove)
   store.user = response.user
-  // console.log(store.user)
+  // store.movesMade = 0
 }
 const signInFailure = function () {
   $('#message').text('Sign In Failed!')
@@ -33,13 +38,14 @@ const changePasswordSuccess = function (response) {
   $('#message').text('Successfully Changed Password')
   $('#change-password')[0].reset()
 }
+
 const changePasswordFailure = function () {
   $('#message').text('Change Password Failed!')
   $('#change-password')[0].reset()
 }
 
 const signOutSuccess = function (response) {
-  $('#message').text('Successfully Signed Out')
+  $('#main-message').text('Successfully Signed Out')
   $('#sign-up').show()
   $('#sign-in').show()
   $('#sign-out').hide()
@@ -48,41 +54,47 @@ const signOutSuccess = function (response) {
   $('.board').hide()
   $('#new-game').hide()
   $('#show-game').hide()
+  // gameCan.clearBoard()
+  // $('.box').on('click', gameAction.playMove)
+  // store.movesMade = 0
 }
 
 const signOutFailure = function () {
   $('#message').text('Sign Out Failed!')
 }
 
-const showGameSuccess = function () {
-  $('#message').text('Your Games!')
+const showGameSuccess = function (response) {
+  store.game.played = response.games.length
+  $('#main-message').text(store.game.played+ " Games have been played!")
 }
 
 const showGameFailure = function () {
-  $('#message').text('Cant find your Games!')
+  $('#main-message').text('Cant find your Games!')
 }
 
 const createGameSuccess = function (response) {
-  $('#message').text('Start Your Game!')
-  // store.id = response.game.id
-  // store.game.id = response.game.id
-  // console.log(store.game.id, "is game ID")
   store.game = response.game
-  // console.log(response, "game created")
+  console.log(store.game, "is the new game")
+  gameCan.clearBoard()
+  $('.board').show()
+  $('.message').text('Start Your Game!')
+  $('.player').text()
+  $('.box').on('click', gameAction.playMove)
+  store.movesMade = 0
+  // store.game = response.game
 }
 
 const createGameFailure = function () {
-  $('#message').text('Could Not Create a New Game')
+  $('#main-message').text('Could Not Create a New Game')
 }
 
 const onUpdateGameFailure = function () {
-  $('#message').text('didnt update game')
+  $('#main-message').text('didnt update game')
 }
 
 const onUpdateGameSuccess = function (response) {
-  $('#message').text('game is updated')
-  // store.game.id = response.game.id
-  // console.log(response, 'updated')
+  $('#main-message').text('game is updated')
+  console.log(response, "update")
 }
 
 module.exports = {
@@ -94,8 +106,8 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signInFailure,
-  // showGameSuccess,
-  // showGameFailure,
+  showGameSuccess,
+  showGameFailure,
   createGameSuccess,
   createGameFailure,
   onUpdateGameFailure,

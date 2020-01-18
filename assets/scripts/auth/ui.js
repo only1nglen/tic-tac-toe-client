@@ -75,13 +75,12 @@ const showGameFailure = function () {
 const createGameSuccess = function (response) {
   store.game = response.game
   console.log(store.game, "is the new game")
-  gameCan.clearBoard()
+  // gameCan.clearBoard()
   $('.board').show()
   $('.message').text('Start Your Game!')
   $('.player').text()
-  $('.box').on('click', gameAction.playMove)
-  store.movesMade = 0
-  // store.game = response.game
+  // $('.box').on('click', gameAction.playMove)
+  // store.movesMade = 0
 }
 
 const createGameFailure = function () {

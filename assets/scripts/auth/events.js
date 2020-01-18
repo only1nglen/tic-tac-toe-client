@@ -67,7 +67,6 @@ const onUpdateGame = function (event) {
   .catch(ui.onUpdateGameFailure)
 }
 
-
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)

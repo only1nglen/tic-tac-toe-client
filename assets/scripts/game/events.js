@@ -2,7 +2,7 @@
 const gameCan = require('./game-logic.js')
 const store = require('./../store')
 
-// let movesMade = 0
+let movesMade = 0
 
 const changeTurn = function () {
   if (store.currentPlayer === 'X') {
@@ -24,9 +24,9 @@ const playMove = function (event) {
       //pushes to javascript gamboard
       gameCan.collectMove()
       //increases the movesMade, created when game is started in UI.js
-      store.movesMade++
-      gameCan.checkWinner(store.movesMade)
-      console.log(store.movesMade)
+      movesMade++
+      gameCan.checkWinner(movesMade)
+      console.log(movesMade)
       // changeTurn()
       // console.log(store.game.id)
     } else {

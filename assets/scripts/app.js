@@ -10,10 +10,10 @@ const gameLogic = require('./game/game-logic.js')
 $(() => {
   $('#change-password').hide()
   $('#sign-out').hide()
-  $('#temp').hide()
   $('.board').hide()
   $('#new-game').hide()
   $('#show-game').hide()
+  $('#message').show()
   // your JS code goes here
   gameEvents.addHandlers()
   authEvents.addHandlers()

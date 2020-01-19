@@ -4,11 +4,11 @@ const gameCan = require('./../game/game-logic.js')
 const gameAction = require('./../game/events.js')
 
 const signUpSuccess = function () {
-  $('#message').text('Successfully signed up!')
+  $('#main-message').text('Successfully signed up!')
   $('#sign-up')[0].reset('')
 }
 const signUpFailure = function () {
-  $('#message').text('Sign up Failed!')
+  $('#main-message').text('Sign up Failed!')
   $('#sign-up')[0].reset()
 }
 
@@ -18,7 +18,6 @@ const signInSuccess = function (response) {
   $('#sign-in').hide()
   $('#sign-out').show()
   $('#change-password').show()
-  $('#temp').show()
   $('#sign-in')[0].reset()
   $('#new-game').show()
   $('.board').show()
@@ -28,17 +27,17 @@ const signInSuccess = function (response) {
   // store.movesMade = 0
 }
 const signInFailure = function () {
-  $('#message').text('Sign In Failed!')
+  $('#main-message').text('Sign In Failed!')
   $('#sign-in')[0].reset()
 }
 
 const changePasswordSuccess = function (response) {
-  $('#message').text('Successfully Changed Password')
+  $('#main-message').text('Successfully Changed Password')
   $('#change-password')[0].reset()
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('Change Password Failed!')
+  $('#main-message').text('Change Password Failed!')
   $('#change-password')[0].reset()
 }
 
@@ -48,7 +47,6 @@ const signOutSuccess = function (response) {
   $('#sign-in').show()
   $('#sign-out').hide()
   $('#change-password').hide()
-  $('#temp').hide()
   $('.board').hide()
   $('#new-game').hide()
   $('#show-game').hide()
@@ -58,7 +56,7 @@ const signOutSuccess = function (response) {
 }
 
 const signOutFailure = function () {
-  $('#message').text('Sign Out Failed!')
+  $('#main-message').text('Sign Out Failed!')
 }
 
 const showGameSuccess = function (response) {
@@ -85,7 +83,7 @@ const createGameSuccess = function (response) {
 }
 
 const createGameFailure = function () {
-  $('#main-message').text('Could Not Create a New Game')
+  $('.message').text('Oops, someone stole the tic-tac-toe board!')
 }
 
 const onUpdateGameFailure = function () {

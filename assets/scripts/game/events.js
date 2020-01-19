@@ -34,15 +34,6 @@ const playMove = function (event) {
     }
 }
 
-// const isGameOver = function () {
-//   if (store.gameOver === true) {
-//     store.movesMade = 0
-//   }
-//   else {
-//     playMove()
-//   }
-// }
-
 const addHandlers = function () {
   $('.box').on('click', playMove)
 }

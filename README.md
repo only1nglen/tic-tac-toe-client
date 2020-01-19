@@ -8,6 +8,7 @@ As of right now, it is a work in progress.
 1/10/20
 
 ## Important Links
+- https://git.generalassemb.ly/ga-wdi-boston/game-project
 
 ## Planning Story
   Make sure to break down the game in smaller portions into manageable assignments. Use bootstrap to help assist make and design the board and page. Initially, I forgot about using jquery but that turned out to be a very strong tool to use for interacting with the gameboard and displaying messages to the user. I'm using Javascript to build the logic to the game to decided the game's outcome. I want to use an array to store the moves made and reference that to the winning possiblities.
@@ -17,7 +18,6 @@ As of right now, it is a work in progress.
 - As a user I want to sign in/up/out,change my password
 - As a user I want to play a new game after each game is done
 - As a user I want to view my games history
-- As a user I want to delete a single or all game history
 - As a user I want to see who's turn it is
 - As a user I want to know when a game is over and who won
 - As a user I want to not able to change opponents move
@@ -33,10 +33,10 @@ As of right now, it is a work in progress.
 
 ### Unsolved Problems
 
-- Still need to complete the game logic, much styling, some more display messages after some actions are taken
+- Still need to take the game to a make over stylist.
 
-- Would like to eventually have an AI, designs for X and O, chat system using emojis if online play available
+- Would like to eventually have an AI, designs for X and O, chat system using emojis if online play available.
 
-##Images
+## Images
 - https://imgur.com/DCk05Y0
 - https://imgur.com/kEBLyS7

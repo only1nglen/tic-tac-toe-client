@@ -22,10 +22,8 @@ const signInSuccess = function (response) {
   $('#sign-in')[0].reset()
   $('#new-game').show()
   $('.board').show()
-  $('#show-game').show()
   $('.board').hide()
   gameCan.clearBoard()
-  // $('.box').on('click', gameAction.playMove)
   store.user = response.user
   // store.movesMade = 0
 }
@@ -75,11 +73,11 @@ const showGameFailure = function () {
 const createGameSuccess = function (response) {
   store.game = response.game
   console.log(store.game, "is the new game")
+  $('#show-game').show()
   gameCan.clearBoard()
   $('.board').show()
   $('.message').text('')
   $('.player').text('X start the Game!')
-  // $('.box').on('click', gameAction.playMove)
   $('.box').on('click', gameAction.clickBox)
   store.movesMade = 0
   store.currentPlayer = 'O'
@@ -90,13 +88,13 @@ const createGameFailure = function () {
   $('#main-message').text('Could Not Create a New Game')
 }
 
-// const onUpdateGameFailure = function () {
-//   $('#main-message').text('didnt update game')
-// }
-//
-// const onUpdateGameSuccess = function (response) {
-//   $('#main-message').text('game is updated')
-//   console.log(response, "update")
+const onUpdateGameFailure = function () {
+  // $('#main-message').text('didnt update game')
+}
+
+const onUpdateGameSuccess = function (response) {
+  // $('#main-message').text('game is updated')
+  // console.log(response, "update")
 }
 
 module.exports = {

@@ -2,15 +2,13 @@
 const gameCan = require('./game-logic.js')
 const store = require('./../store')
 
-let movesMade = 0
-
 const changeTurn = function () {
   if (store.currentPlayer === 'X') {
     store.currentPlayer = 'O'
-    $('.message').text(`Player X Turn`)
+    $('.player').text(`Player X Turn`)
   } else {
     store.currentPlayer = 'X'
-    $('.message').text(`Player O Turn`)
+    $('.player').text(`Player O Turn`)
   }
 }
 
@@ -19,14 +17,14 @@ const playMove = function (event) {
   if ($(event.target).text() === '') {
       changeTurn()
       $(event.target).text(store.currentPlayer)
-      //pushes to api gameboard
+      //push to api gameboard
       store.id = $(event.target).attr('data-cell-index')
-      //pushes to javascript gamboard
+      //push to javascript gamboard
       gameCan.collectMove()
       //increases the movesMade, created when game is started in UI.js
-      movesMade++
-      gameCan.checkWinner(movesMade)
-      console.log(movesMade)
+      store.movesMade++
+      gameCan.checkWinner(store.movesMade)
+      console.log(store.movesMade)
       // changeTurn()
       // console.log(store.game.id)
     } else {
@@ -34,13 +32,25 @@ const playMove = function (event) {
     }
 }
 
+const clickBox = function (event) {
+  if (store.gameOver === false) {
+    playMove(event)
+    // console.log(event)
+    // console.log(store.gameOver, " is game over")
+  }
+  else {
+    // console.log('fail on')
+    // console.log(store.gameOver, " is game over else")
+    $('.box').off('click', clickBox)
+    }
+  }
+
 const addHandlers = function () {
-  $('.box').on('click', playMove)
+  $('.box').on('click', clickBox)
 }
 
 module.exports = {
   addHandlers,
-  // movesMade,
-  playMove
-  // isGameOver
+  playMove,
+  clickBox
 }

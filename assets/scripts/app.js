@@ -15,6 +15,6 @@ $(() => {
   $('#new-game').hide()
   $('#show-game').hide()
   // your JS code goes here
-  // gameEvents.addHandlers()
+  gameEvents.addHandlers()
   authEvents.addHandlers()
 })

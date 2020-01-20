@@ -24,9 +24,6 @@ const playMove = function (event) {
       //increases the movesMade, created when game is started in UI.js
       store.movesMade++
       gameCan.checkWinner(store.movesMade)
-      console.log(store.movesMade)
-      // changeTurn()
-      // console.log(store.game.id)
     } else {
       $('.message').text('Please choose another move!')
     }
@@ -35,12 +32,8 @@ const playMove = function (event) {
 const clickBox = function (event) {
   if (store.gameOver === false) {
     playMove(event)
-    // console.log(event)
-    // console.log(store.gameOver, " is game over")
   }
   else {
-    // console.log('fail on')
-    // console.log(store.gameOver, " is game over else")
     $('.box').off('click', clickBox)
     }
   }

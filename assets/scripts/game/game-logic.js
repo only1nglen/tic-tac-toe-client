@@ -44,18 +44,14 @@ const checkWinner =  function (movesMade) {
       $('.message').text(`Player ${store.currentPlayer} has won!`)
       $('.player').text('Create a New Game')
       store.gameOver = true
-      //for else if statmente below, if the game is
    } else if (store.movesMade === 9 && store.gameOver === false ) {
       $('.message').text('Game is a Draw')
       $('.player').text('Create a New Game')
       store.gameOver = true
-      console.log(store.gameOver)
     }
     else {
       $('.message').text("You've made a move!")
       store.gameOver = store.game.over
-      // console.log(store.gameOver)
-      // console.log(gameBoard, 'is gameBoard')
     }
   }
 

@@ -24,7 +24,6 @@ const signInSuccess = function (response) {
   $('.board').hide()
   gameCan.clearBoard()
   store.user = response.user
-  // store.movesMade = 0
 }
 const signInFailure = function () {
   $('#main-message').text('Sign In Failed!')
@@ -50,9 +49,6 @@ const signOutSuccess = function (response) {
   $('.board').hide()
   $('#new-game').hide()
   $('#show-game').hide()
-  // gameCan.clearBoard()
-  // $('.box').on('click', gameAction.playMove)
-  // store.movesMade = 0
 }
 
 const signOutFailure = function () {
@@ -70,7 +66,6 @@ const showGameFailure = function () {
 
 const createGameSuccess = function (response) {
   store.game = response.game
-  console.log(store.game, "is the new game")
   $('#show-game').show()
   gameCan.clearBoard()
   $('.board').show()
@@ -92,7 +87,6 @@ const onUpdateGameFailure = function () {
 
 const onUpdateGameSuccess = function (response) {
   // $('#main-message').text('game is updated')
-  // console.log(response, "update")
 }
 
 module.exports = {

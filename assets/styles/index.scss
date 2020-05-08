@@ -1,7 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-color: silver;
+}
+
+.gamePage {
+  background-color: silver;
+  align-self: center;
+  align-items: center;
+}
+
 .box {
-  background-color: white;
+  // background-color: white;
   border: 1px solid black;
   color: blue;
   align-items: center;
@@ -11,21 +21,21 @@
 }
 
 .player {
-  background-color: white;
-  border: 1px solid black;
+  // background-color: white;
+  // border: 1px solid black;
   color: red;
   align-items: center;
   display: flex;
-  height: 100px;
+  // height: 100px;
   justify-content: center;
 }
 
 .message {
-  background-color: white;
-  border: 1px solid black;
+  // background-color: white;
+  // border: 1px solid black;
   color: green;
   align-items: center;
   display: flex;
-  height: 100px;
+  // height: 100px;
   justify-content: center;
 }

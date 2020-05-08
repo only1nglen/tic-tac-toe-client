@@ -4,7 +4,7 @@ const store = require('./../store')
 
 const gameBoard = [' ',' ',' ',' ',' ',' ',' ',' ', ' ']
 
-const checkWinner =  function (movesMade) {
+const checkWinner =  function (movesMade, res) {
   if (gameBoard[0] !== '' && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) {
       $('.message').text(`Player ${store.currentPlayer} has won!`)
       $('.player').text('Create a New Game')

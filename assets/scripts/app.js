@@ -14,6 +14,9 @@ $(() => {
   $('#new-game').hide()
   $('#show-game').hide()
   $('#main-message').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#pw-button').hide()
   // your JS code goes here
   gameEvents.addHandlers()
   authEvents.addHandlers()

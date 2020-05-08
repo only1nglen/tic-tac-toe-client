@@ -72,9 +72,25 @@ const addHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#show-game').on('submit', onShowGames)
-  $('#new-game').on('submit', onCreateGame)
+  $('#show-game').on('click', onShowGames)
+  $('#new-game').on('click', onCreateGame)
   $('.box').on('click', onUpdateGame)
+  $('#register').click(function(event) {
+    event.preventDefault()
+    $('#main-message').text('')
+    $('#sign-up').toggle()
+    $('#sign-in').hide()
+  })
+  $('#lets-play').click(function(event) {
+    event.preventDefault()
+    $('#main-message').text('')
+    $('#sign-in').toggle()
+    $('#sign-up').hide()
+  })
+  $('#pw-button').click(function(event) {
+    event.preventDefault()
+    $('#change-password').toggle()
+  })
 }
 
 module.exports = {

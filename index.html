@@ -1,87 +1,96 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic-Tac-Toe</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic-Tac-Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <nav>
-      <form id='sign-up'>
-              <fieldset>
-                <legend>Sign-Up!</legend>
-                <input class="field" name="credentials[email]" type='email' placeholder='email' />
-                <input class="field" name="credentials[password]" type ='password' placeholder='password' />
-                <input class="field" name="credentials[password_confirmation]" type ='password' placeholder='password confirmation' />
-                <input type='submit' value='Sign-Up!' />
-              </fieldset>
-            </form>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-            <form id='sign-in'>
-              <fieldset>
-                <legend>Sign-in!</legend>
-                <input class="field" name="credentials[email]" type='email' placeholder='email' />
-                <input class="field" name="credentials[password]" type ='password' placeholder='password' />
-                <input type='submit' value='Sign-in!' />
-              </fieldset>
-            </form>
+<body>
+<div class='container gamePage'>
+  <h1>Tic-Tac-Toe</h1>
 
-            <form id='change-password'>
-              <fieldset>
-                <legend>Change Password</legend>
-                <input class="field" name="passwords[old]" type='password' placeholder='Old Password' />
-                <input class="field" name="passwords[new]" type ='password' placeholder='New Password' />
-                <input type='submit' value='Change Password!' />
-              </fieldset>
-            </form>
+  <nav>
 
-            <form id='sign-out'>
-              <fieldset>
-                <legend>Sign Out!</legend>
-                <input type='submit' value='Sign Out!' />
-              </fieldset>
-            </form>
+    <button type='button' id='register' class="btn btn-primary">Register</button>
+    <button type='button' id='lets-play' class="btn btn-primary">Let's Play</button>
 
-    </nav>
- <p id="main-message"></p>
+    <form id='sign-out'>
+      <fieldset>
+        <button type="submit" class="btn btn-danger">Sign Out</button>
+      </fieldset>
+    </form>
 
-   <form id='new-game'>
-     <fieldset>
-       <input type='submit' value='New Game!' />
-     </fieldset>
-   </form>
+    <form id='sign-up'>
+      <h3>Sign-Up</h3>
+      <div class="form-inline">
+        <label>Email address:</label>
+        <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder='E-mail'>
+        <label>Password:</label>
+        <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder='Password' />
+        <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password_confirmation]" placeholder='Password Confirmation' />
+        <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Sign Up!</button>
+      </div>
+      <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
+    </form>
 
-   <form id='show-game'>
-     <fieldset>
-       <input type='submit' value='Games Played!' />
-     </fieldset>
-   </form>
+    <form id='sign-in'>
+      <h3>Sign-In</h3>
+      <div class="form-inline">
+        <label>Email address:</label>
+        <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder='E-mail'>
+        <label>Password:</label>
+        <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder='Password' />
+        <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Sign In!</button>
+      </div>
+      <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
+    </form>
 
-      <div class="container board">
+    <button type='button' id='pw-button' class="btn btn-primary">Change Secret Keyword aka Password. Why is this button name so long? ¯\_(ツ)_/¯</button>
 
-        <p class="player"></p>
-        <p class="message"></p>
+    <form id='change-password'>
+      <!-- <h4>Change Password:</h4> -->
+      <div class="form-inline">
+        <input type="password" class="form-control mb-2 mr-sm-2" name="passwords[old]" placeholder='Old Password' />
+        <input type="password" class="form-control mb-2 mr-sm-2" name="passwords[new]" placeholder='New Password' />
+        <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Change Password</button>
+      </div>
+    </form>
 
-            <div class="row" id="gameSpace">
-              <div class="col-4 box" data-cell-index='0' id="box0"></div>
-              <div class="col-4 box" data-cell-index='1' id="box1"></div>
-              <div class="col-4 box" data-cell-index='2' id="box2"></div>
+  </nav>
 
-              <div class="col-4 box" data-cell-index='3' id="box3"></div>
-              <div class="col-4 box" data-cell-index='4' id="box4"></div>
-              <div class="col-4 box" data-cell-index='5' id="box5"></div>
+  <p id="main-message"></p>
 
-              <div class="col-4 box" data-cell-index='6' id="box6"></div>
-              <div class="col-4 box" data-cell-index='7' id="box7"></div>
-              <div class="col-4 box" data-cell-index='8' id="box8"></div>
-            </div>
-          </div>
-    </body>
+      <button type='button' id='new-game' class="btn btn-success">New Game</button>
+      <button type='button' id='show-game' class="btn btn-info">Games Played</button>
+
+  <div class="container board">
+
+    <p class="player"></p>
+    <p class="message"></p>
+
+    <div class="row" id="gameSpace">
+      <div class="col-4 box" data-cell-index='0' id="box0"></div>
+      <div class="col-4 box" data-cell-index='1' id="box1"></div>
+      <div class="col-4 box" data-cell-index='2' id="box2"></div>
+
+      <div class="col-4 box" data-cell-index='3' id="box3"></div>
+      <div class="col-4 box" data-cell-index='4' id="box4"></div>
+      <div class="col-4 box" data-cell-index='5' id="box5"></div>
+
+      <div class="col-4 box" data-cell-index='6' id="box6"></div>
+      <div class="col-4 box" data-cell-index='7' id="box7"></div>
+      <div class="col-4 box" data-cell-index='8' id="box8"></div>
+    </div>
+  </div>
+</div>
+</body>
+
 </html>

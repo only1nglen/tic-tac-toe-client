@@ -17,62 +17,69 @@
   <div class='container gamePage'>
     <h1>Tic-Tac-Toe</h1>
 
+    <!-- User Interface -->
     <nav>
       <div>
         <button type='button' id='register' class="btn btn-primary">Register</button>
         <button type='button' id='lets-play' class="btn btn-primary">Let's Play</button>
       </div>
 
-    <form id='sign-up'>
-      <h3>Sign-Up</h3>
-      <div class="form-inline">
-        <label>Email address:</label>
-        <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder='E-mail'>
-        <label>Password:</label>
-        <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder='Password' />
-        <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password_confirmation]" placeholder='Password Confirmation' />
-        <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Sign Up!</button>
-      </div>
-      <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
-    </form>
+      <form id='sign-up'>
+        <h3>Sign-Up</h3>
+        <div class="form-inline">
+          <label>Email address:</label>
+          <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder='E-mail'>
+          <label>Password:</label>
+          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder='Password' />
+          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password_confirmation]" placeholder='Password Confirmation' />
+          <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Sign Up!</button>
+        </div>
+        <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
+      </form>
 
-    <form id='sign-in'>
-      <h3>Sign-In</h3>
-      <div class="form-inline">
-        <label>Email address:</label>
-        <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder='E-mail'>
-        <label>Password:</label>
-        <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder='Password' />
-        <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Sign In!</button>
-      </div>
-      <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
-    </form>
+      <form id='sign-in'>
+        <h3>Sign-In</h3>
+        <div class="form-inline">
+          <label>Email address:</label>
+          <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder='E-mail'>
+          <label>Password:</label>
+          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder='Password' />
+          <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Sign In!</button>
+        </div>
+        <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
+      </form>
 
-    <form id='sign-out'>
-      <button type="submit" class="btn btn-danger">Sign Out</button>
-    </form>
+      <form id='sign-out'>
+        <button type="submit" class="btn btn-danger">Sign Out</button>
+      </form>
 
-    <button type='button' id='pw-button' class="btn btn-primary">
-      Change Secret Keyword aka Password.
-      Why is this button name so long? ¯\_(ツ)_/¯
-    </button>
+      <br>
 
-    <form id='change-password'>
-      <div class="form-inline">
-        <input type="password" class="form-control mb-2 mr-sm-2" name="passwords[old]" placeholder='Old Password' />
-        <input type="password" class="form-control mb-2 mr-sm-2" name="passwords[new]" placeholder='New Password' />
-        <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Change Password</button>
-      </div>
-    </form>
+      <button type='button' id='pw-button' class="btn btn-primary">
+        Change Secret Keyword aka Password.
+        Why is this button name so long? ¯\_(ツ)_/¯
+      </button>
+<br>
+      <form id='change-password'>
+        <div class="form-inline">
+          <input type="password" class="form-control mb-2 mr-sm-2" name="passwords[old]" placeholder='Old Password' />
+          <input type="password" class="form-control mb-2 mr-sm-2" name="passwords[new]" placeholder='New Password' />
+          <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Change Password</button>
+        </div>
+      </form>
 
     </nav>
 
+    <!-- End of Userface -->
+
+    <!-- Game board and Game Messages -->
+
     <p id="main-message"></p>
 
-  <div>
-    <button type='button' id='new-game' class="btn btn-success">New Game</button>
-    <button type='button' id='show-game' class="btn btn-info">Games Played</button>
-  </div>
+    <div>
+      <button type='button' id='new-game' class="btn btn-success">New Game</button>
+      <button type='button' id='show-game' class="btn btn-info">Games Played</button>
+    </div>
 
     <div class="container board">
       <p class="player"></p>
@@ -92,6 +99,8 @@
         <div class="col-4 box" data-cell-index='8' id="box8"></div>
       </div>
     </div>
+
+    <!-- End of Game board and Game Messages -->
 
   </div>
 </body>

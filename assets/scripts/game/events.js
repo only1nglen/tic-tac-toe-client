@@ -17,8 +17,8 @@ const playMove = function (event) {
   if ($(event.target).text() === '') {
       changeTurn()
       $(event.target).text(store.currentPlayer)
-      //push to api gameboard
-      store.id = $(event.target).attr('data-cell-index')
+      //push movePlayed to api gameboard
+      store.movePlayed = $(event.target).attr('data-cell-index')
       //push to javascript gamboard
       gameCan.collectMove()
       //increases the movesMade, created when game is started in UI.js
@@ -32,9 +32,6 @@ const playMove = function (event) {
 const clickBox = function (event) {
   if (store.gameOver === false) {
     playMove(event)
-  }
-  else {
-    $('.box').off('click', clickBox)
     }
   }
 

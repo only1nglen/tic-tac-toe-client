@@ -4,46 +4,36 @@ const store = require('./../store')
 
 const gameBoard = [' ',' ',' ',' ',' ',' ',' ',' ', ' ']
 
+const endGame = () => {
+  $('.message').text(`Player ${store.currentPlayer} has won!`)
+  $('.player').text('Create a New Game')
+  store.gameOver = true
+}
+
 const checkWinner =  function (movesMade, res) {
   if (gameBoard[0] !== '' && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) {
-      $('.message').text(`Player ${store.currentPlayer} has won!`)
-      $('.player').text('Create a New Game')
-      store.gameOver = store.game.over
-      store.gameOver = true
+    endGame()
   } else if
     (gameBoard[3] !== '' && gameBoard[3] === gameBoard[4] && gameBoard[3] === gameBoard[5]) {
-      $('.message').text(`Player ${store.currentPlayer} has won!`)
-      $('.player').text('Create a New Game')
-      store.gameOver = true
+    endGame()
   } else if
     (gameBoard[6] !== '' && gameBoard[6] === gameBoard[7] && gameBoard[6] === gameBoard[8]) {
-      $('.message').text(`Player ${store.currentPlayer} has won!`)
-      store.gameOver = true
+      endGame()
   } else if
     (gameBoard[0] !== '' && gameBoard[0] === gameBoard[3] && gameBoard[0] === gameBoard[6]) {
-      $('.message').text(`Player ${store.currentPlayer} has won!`)
-      $('.player').text('Create a New Game')
-      store.gameOver = true
+      endGame()
   } else if
     (gameBoard[1] !== '' && gameBoard[1] === gameBoard[4] && gameBoard[1] === gameBoard[7]) {
-      $('.message').text(`Player ${store.currentPlayer} has won!`)
-      $('.player').text('Create a New Game')
-      store.gameOver = true
+      endGame()
   }  else if
     (gameBoard[2] !== '' && gameBoard[2] === gameBoard[5] && gameBoard[2] === gameBoard[8]) {
-      $('.message').text(`Player ${store.currentPlayer} has won!`)
-      $('.player').text('Create a New Game')
-      store.gameOver = true
+      endGame()
   } else if
     (gameBoard[0] !== '' && gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8]) {
-      $('.message').text(`Player ${store.currentPlayer} has won!`)
-      $('.player').text('Create a New Game')
-      store.gameOver = true
+      endGame()
   } else if
     (gameBoard[2] !== '' && gameBoard[2] === gameBoard[4] && gameBoard[2] === gameBoard[6]) {
-      $('.message').text(`Player ${store.currentPlayer} has won!`)
-      $('.player').text('Create a New Game')
-      store.gameOver = true
+      endGame()
    } else if (store.movesMade === 9 && store.gameOver === false ) {
       $('.message').text('Game is a Draw')
       $('.player').text('Create a New Game')
@@ -51,7 +41,7 @@ const checkWinner =  function (movesMade, res) {
     }
     else {
       $('.message').text("You've made a move!")
-      store.gameOver = store.game.over
+      store.gameOver = false
     }
   }
 

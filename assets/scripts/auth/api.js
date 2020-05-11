@@ -72,7 +72,7 @@ const updateGame = function () {
     data: {
   "game": {
     "cell": {
-      "index": store.id,
+      "index": store.movePlayed,
       "value": store.currentPlayer
     },
     "over": store.gameOver

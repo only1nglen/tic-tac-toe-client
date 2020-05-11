@@ -26,7 +26,6 @@ const signInSuccess = function (response) {
   $('#register').hide()
   $('#lets-play').hide()
   gameCan.clearBoard()
-  console.log(response, 'response')
   store.user = response.user
 }
 const signInFailure = function () {
@@ -47,15 +46,15 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#main-message').text('Successfully Signed Out')
-  $('#sign-up').show()
-  $('#sign-in').show()
+  // $('#sign-up').show()
+  // $('#sign-in').show()
   $('#sign-out').hide()
   $('#change-password').hide()
   $('.board').hide()
   $('#new-game').hide()
   $('#show-game').hide()
-  $('#sign-up').hide()
-  $('#sign-in').hide()
+  // $('#sign-up').hide()
+  // $('#sign-in').hide()
   $('#pw-button').hide()
   $('#register').show()
   $('#lets-play').show()
@@ -75,13 +74,11 @@ const showGameFailure = function () {
 }
 
 const createGameSuccess = function (response) {
-  console.log(response, 'new game')
   store.game = response.game
   gameCan.clearBoard()
   $('.board').show()
   $('.message').text('')
   $('.player').text('X start the Game!')
-  $('.box').on('click', gameAction.clickBox)
   store.movesMade = 0
   store.currentPlayer = 'O'
   store.gameOver = false

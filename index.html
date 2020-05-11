@@ -14,19 +14,14 @@
 </head>
 
 <body>
-<div class='container gamePage'>
-  <h1>Tic-Tac-Toe</h1>
+  <div class='container gamePage'>
+    <h1>Tic-Tac-Toe</h1>
 
-  <nav>
-
-    <button type='button' id='register' class="btn btn-primary">Register</button>
-    <button type='button' id='lets-play' class="btn btn-primary">Let's Play</button>
-
-    <form id='sign-out'>
-      <fieldset>
-        <button type="submit" class="btn btn-danger">Sign Out</button>
-      </fieldset>
-    </form>
+    <nav>
+      <div>
+        <button type='button' id='register' class="btn btn-primary">Register</button>
+        <button type='button' id='lets-play' class="btn btn-primary">Let's Play</button>
+      </div>
 
     <form id='sign-up'>
       <h3>Sign-Up</h3>
@@ -53,10 +48,16 @@
       <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
     </form>
 
-    <button type='button' id='pw-button' class="btn btn-primary">Change Secret Keyword aka Password. Why is this button name so long? ¯\_(ツ)_/¯</button>
+    <form id='sign-out'>
+      <button type="submit" class="btn btn-danger">Sign Out</button>
+    </form>
+
+    <button type='button' id='pw-button' class="btn btn-primary">
+      Change Secret Keyword aka Password.
+      Why is this button name so long? ¯\_(ツ)_/¯
+    </button>
 
     <form id='change-password'>
-      <!-- <h4>Change Password:</h4> -->
       <div class="form-inline">
         <input type="password" class="form-control mb-2 mr-sm-2" name="passwords[old]" placeholder='Old Password' />
         <input type="password" class="form-control mb-2 mr-sm-2" name="passwords[new]" placeholder='New Password' />
@@ -64,33 +65,35 @@
       </div>
     </form>
 
-  </nav>
+    </nav>
 
-  <p id="main-message"></p>
+    <p id="main-message"></p>
 
-      <button type='button' id='new-game' class="btn btn-success">New Game</button>
-      <button type='button' id='show-game' class="btn btn-info">Games Played</button>
-
-  <div class="container board">
-
-    <p class="player"></p>
-    <p class="message"></p>
-
-    <div class="row" id="gameSpace">
-      <div class="col-4 box" data-cell-index='0' id="box0"></div>
-      <div class="col-4 box" data-cell-index='1' id="box1"></div>
-      <div class="col-4 box" data-cell-index='2' id="box2"></div>
-
-      <div class="col-4 box" data-cell-index='3' id="box3"></div>
-      <div class="col-4 box" data-cell-index='4' id="box4"></div>
-      <div class="col-4 box" data-cell-index='5' id="box5"></div>
-
-      <div class="col-4 box" data-cell-index='6' id="box6"></div>
-      <div class="col-4 box" data-cell-index='7' id="box7"></div>
-      <div class="col-4 box" data-cell-index='8' id="box8"></div>
-    </div>
+  <div>
+    <button type='button' id='new-game' class="btn btn-success">New Game</button>
+    <button type='button' id='show-game' class="btn btn-info">Games Played</button>
   </div>
-</div>
+
+    <div class="container board">
+      <p class="player"></p>
+      <p class="message"></p>
+
+      <div class="row" id="gameSpace">
+        <div class="col-4 box" data-cell-index='0' id="box0"></div>
+        <div class="col-4 box" data-cell-index='1' id="box1"></div>
+        <div class="col-4 box" data-cell-index='2' id="box2"></div>
+
+        <div class="col-4 box" data-cell-index='3' id="box3"></div>
+        <div class="col-4 box" data-cell-index='4' id="box4"></div>
+        <div class="col-4 box" data-cell-index='5' id="box5"></div>
+
+        <div class="col-4 box" data-cell-index='6' id="box6"></div>
+        <div class="col-4 box" data-cell-index='7' id="box7"></div>
+        <div class="col-4 box" data-cell-index='8' id="box8"></div>
+      </div>
+    </div>
+
+  </div>
 </body>
 
 </html>

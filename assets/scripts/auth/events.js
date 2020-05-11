@@ -75,20 +75,20 @@ const addHandlers = function () {
   $('#show-game').on('click', onShowGames)
   $('#new-game').on('click', onCreateGame)
   $('.box').on('click', onUpdateGame)
-  $('#register').click(function(event) {
-    event.preventDefault()
+  $('#register').click(function () {
+    // event.preventDefault()
     $('#main-message').text('')
     $('#sign-up').toggle()
     $('#sign-in').hide()
   })
-  $('#lets-play').click(function(event) {
-    event.preventDefault()
+  $('#lets-play').click(function() {
+    // event.preventDefault()
     $('#main-message').text('')
     $('#sign-in').toggle()
     $('#sign-up').hide()
   })
-  $('#pw-button').click(function(event) {
-    event.preventDefault()
+  $('#pw-button').click(function() {
+    // event.preventDefault()
     $('#change-password').toggle()
   })
 }

@@ -4,14 +4,24 @@ body {
   background-color: silver;
 }
 
+// h1 {
+//   align-self: center;
+// }
+
 .gamePage {
+  display: flex;
+  flex-direction: column;
   background-color: silver;
-  align-self: center;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .box {
-  // background-color: white;
   border: 1px solid black;
   color: blue;
   align-items: center;

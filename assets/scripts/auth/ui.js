@@ -66,7 +66,7 @@ const signOutFailure = function () {
 
 const showGameSuccess = function (response) {
   store.gamesPlayed = response.games.length
-  $('#main-message').text(`${store.gamesPlayed} Games have been played`)
+  $('#main-message').text(`${store.gamesPlayed} Completed Games`)
 }
 
 const showGameFailure = function () {

@@ -4,10 +4,6 @@ body {
   background-color: silver;
 }
 
-// h1 {
-//   align-self: center;
-// }
-
 .gamePage {
   display: flex;
   flex-direction: column;
@@ -21,13 +17,18 @@ nav {
   align-items: center;
 }
 
+.board {
+  width: auto;
+}
+
 .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
   border: 1px solid black;
   color: blue;
-  align-items: center;
-  display: flex;
-  height: 100px;
-  justify-content: center;
 }
 
 .player {

@@ -31,10 +31,9 @@ https://git.generalassemb.ly/ga-wdi-boston/game-project
 -   Bootstrap
 -   Javascript
 
-### Unsolved Problems
+### Unsolved Problems/Things to DO
 
--   Still need to take the game to a make over stylist.
-
+-   Make the gameboard look like a traditional game gameboard
 -   Would like to eventually have an AI, designs for X and O, chat system using emojis if online play available.
 
 ## Images

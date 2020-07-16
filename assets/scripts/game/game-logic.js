@@ -1,5 +1,5 @@
 'use strict'
-const gameAction = require('./events.js')
+
 const store = require('./../store')
 
 const gameBoard = [' ',' ',' ',' ',' ',' ',' ',' ', ' ']
@@ -10,7 +10,7 @@ const endGame = () => {
   store.gameOver = true
 }
 
-const checkWinner =  function (movesMade, res) {
+const checkWinner =  function (movesMade) {
   if (gameBoard[0] !== '' && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) {
     endGame()
   } else if

@@ -1,7 +1,6 @@
 'use strict'
 
 const api = require('./api')
-const store = require('./../store.js')
 const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields')
 
@@ -39,42 +38,11 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const onShowGames = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  api.showGame()
-  .then(ui.showGameSuccess)
-  .catch(ui.showGameFailure)
-}
-
-const onCreateGame = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  api.createGame()
-  .then(ui.createGameSuccess)
-  .catch(ui.createGameFailure)
-
-}
-
-const onUpdateGame = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  api.updateGame()
-  .then(ui.onUpdateGameSuccess)
-  .catch(ui.onUpdateGameFailure)
-}
-
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
-  $('#show-game').on('click', onShowGames)
-  $('#new-game').on('click', onCreateGame)
-  $('.box').on('click', onUpdateGame)
   $('#register').click(function () {
     // event.preventDefault()
     $('#main-message').text('')

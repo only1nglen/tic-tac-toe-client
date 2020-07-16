@@ -1,7 +1,6 @@
 'use strict'
 const store = require('./../store.js')
 const gameCan = require('./../game/game-logic.js')
-const gameAction = require('./../game/events.js')
 
 const signUpSuccess = function () {
   $('#main-message').text('Successfully signed up!')
@@ -46,15 +45,11 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#main-message').text('Successfully Signed Out')
-  // $('#sign-up').show()
-  // $('#sign-in').show()
   $('#sign-out').hide()
   $('#change-password').hide()
   $('.board').hide()
   $('#new-game').hide()
   $('#show-game').hide()
-  // $('#sign-up').hide()
-  // $('#sign-in').hide()
   $('#pw-button').hide()
   $('#register').show()
   $('#lets-play').show()
@@ -62,38 +57,6 @@ const signOutSuccess = function (response) {
 
 const signOutFailure = function () {
   $('#main-message').text('Sign Out Failed!')
-}
-
-const showGameSuccess = function (response) {
-  store.gamesPlayed = response.games.length
-  $('#main-message').text(`${store.gamesPlayed} Completed Games`)
-}
-
-const showGameFailure = function () {
-  $('#main-message').text('Cant find your Games!')
-}
-
-const createGameSuccess = function (response) {
-  store.game = response.game
-  gameCan.clearBoard()
-  $('.board').show()
-  $('.message').text('')
-  $('.player').text('X start the Game!')
-  store.movesMade = 0
-  store.currentPlayer = 'O'
-  store.gameOver = false
-}
-
-const createGameFailure = function () {
-  $('.message').text('Oops, someone stole the tic-tac-toe board!')
-}
-
-const onUpdateGameFailure = function () {
-  // $('#main-message').text('didnt update game')
-}
-
-const onUpdateGameSuccess = function (response) {
-  // $('#main-message').text('game is updated')
 }
 
 module.exports = {
@@ -104,11 +67,5 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signInFailure,
-  showGameSuccess,
-  showGameFailure,
-  createGameSuccess,
-  createGameFailure,
-  onUpdateGameFailure,
-  onUpdateGameSuccess
+  signInFailure
 }

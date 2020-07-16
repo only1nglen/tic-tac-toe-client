@@ -1,6 +1,32 @@
 'use strict'
+
 const gameCan = require('./game-logic.js')
 const store = require('./../store')
+const api = require('./api')
+const ui = require('./ui')
+const getFormFields = require('./../../../lib/get-form-fields')
+
+const onShowGames = function (event) {
+  event.preventDefault()
+  api.showGame()
+  .then(ui.showGameSuccess)
+  .catch(ui.showGameFailure)
+}
+
+const onCreateGame = function (event) {
+  event.preventDefault()
+  api.createGame()
+  .then(ui.createGameSuccess)
+  .catch(ui.createGameFailure)
+
+}
+
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  api.updateGame()
+  .then(ui.onUpdateGameSuccess)
+  .catch(ui.onUpdateGameFailure)
+}
 
 const changeTurn = function () {
   if (store.currentPlayer === 'X') {
@@ -11,6 +37,12 @@ const changeTurn = function () {
     $('.player').text(`Player O Turn`)
   }
 }
+
+const clickBox = function (event) {
+  if (store.gameOver === false) {
+    playMove(event)
+    }
+  }
 
 const playMove = function (event) {
   event.preventDefault()
@@ -29,14 +61,11 @@ const playMove = function (event) {
     }
 }
 
-const clickBox = function (event) {
-  if (store.gameOver === false) {
-    playMove(event)
-    }
-  }
-
 const addHandlers = function () {
   $('.box').on('click', clickBox)
+  $('#show-game').on('click', onShowGames)
+  $('#new-game').on('click', onCreateGame)
+  $('.box').on('click', onUpdateGame)
 }
 
 module.exports = {

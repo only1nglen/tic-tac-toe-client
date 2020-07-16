@@ -4,7 +4,6 @@ const gameCan = require('./game-logic.js')
 const store = require('./../store')
 const api = require('./api')
 const ui = require('./ui')
-const getFormFields = require('./../../../lib/get-form-fields')
 
 const onShowGames = function (event) {
   event.preventDefault()

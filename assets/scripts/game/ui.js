@@ -1,4 +1,5 @@
 'use strict'
+
 const store = require('./../store.js')
 const gameCan = require('./../game/game-logic.js')
 

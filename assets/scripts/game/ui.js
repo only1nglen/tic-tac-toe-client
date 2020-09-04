@@ -28,11 +28,7 @@ const showGameSuccess = function (response) {
   }
   
   const onUpdateGameFailure = function () {
-    // $('#main-message').text('didnt update game')
-  }
-  
-  const onUpdateGameSuccess = function (response) {
-    // $('#main-message').text('game is updated')
+    $('#main-message').text('Didn\'t update game')
   }
 
   module.exports = {
@@ -40,6 +36,5 @@ const showGameSuccess = function (response) {
     showGameFailure,
     createGameSuccess,
     createGameFailure,
-    onUpdateGameFailure,
-    onUpdateGameSuccess
+    onUpdateGameFailure
   }

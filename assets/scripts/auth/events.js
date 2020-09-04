@@ -44,19 +44,16 @@ const addHandlers = function () {
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#register').click(function () {
-    // event.preventDefault()
     $('#main-message').text('')
     $('#sign-up').toggle()
     $('#sign-in').hide()
   })
   $('#lets-play').click(function() {
-    // event.preventDefault()
     $('#main-message').text('')
     $('#sign-in').toggle()
     $('#sign-up').hide()
   })
   $('#pw-button').click(function() {
-    // event.preventDefault()
     $('#change-password').toggle()
   })
 }

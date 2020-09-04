@@ -28,10 +28,10 @@
         <h3>Sign-Up</h3>
         <div class>
           <label>Email address:</label>
-          <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder='E-mail'>
+          <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder=' Enter E-mail'>
           <label>Password:</label>
-          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder='Password' />
-          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password_confirmation]" placeholder='Password Confirmation' />
+          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder=' Enter Password' />
+          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password_confirmation]" placeholder='Confirm Password' />
           <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Sign Up!</button>
         </div>
         <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
@@ -41,12 +41,18 @@
         <h3>Sign-In</h3>
         <div class>
           <label>Email address:</label>
-          <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" placeholder='E-mail'>
+          <input type="email" class="form-control mb-2 mr-sm-2" name="credentials[email]" value="q@q" />
           <label>Password:</label>
-          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" placeholder='Password' />
+          <input type="password" class="form-control mb-2 mr-sm-2" name="credentials[password]" value="1" />
           <button type="submit" class="btn btn-primary mb-2 mr-sm-2">Sign In!</button>
         </div>
-        <small class="form-text text-muted">Please do NOT use a real email and password. App is for demo purposes.</small>
+        <div>
+          Use this dummy account provided above. 
+          <br>
+          Please keep password the same if changed.
+        </div>
+        <small class="form-text text-muted">
+          Please do NOT use a real email and password. App is for demo purposes.</small>
       </form>
 
       <form id='sign-out'>
@@ -57,7 +63,10 @@
 
       <button type='button' id='pw-button' class="btn btn-primary">
         Change Secret Keyword aka Password.
-        Why is this button name so long? ¯\_(ツ)_/¯
+        <br>
+        Why is this button name so long?
+        <br>
+        ¯\_(ツ)_/¯
       </button>
 <br>
       <form id='change-password'>
